@@ -1,6 +1,7 @@
 package com.example.tablayoutgradientindicator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -38,10 +40,22 @@ public class MainActivity extends AppCompatActivity {
         tabFragmentAdapter = new TabFragmentAdapter(getSupportFragmentManager());    //自己寫的TabFragmentAdapter
         tabFragmentAdapter.addFragment(OneFragment.newInstance(), "Tab1"); //呼叫自己寫的方法,在Frgament新增標題
         tabFragmentAdapter.addFragment(TwoFragment.newInstance(), "Tab2");
-        tableLayout.setTabTextColors(Color.BLUE, Color.RED);
+        tableLayout.setTabTextColors(getResources().getColor(R.color.colorPrimary), Color.RED);
+
+
+        //設置底線顏色
+//        tableLayout.setSelectedTabIndicatorColor(Color.parseColor("#FF0000"));
+//        tableLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
+//        tableLayout.setTabTextColors(Color.parseColor("#727272"), Color.parseColor("#ffffff"));
+//       顏色沒出來原因 請記住，int不是顏色資源值，而是從十六進制解析的int
+//       也可以試試看   app:tabSelectedTextColor="@color/tab_se"
+
+//       文字居爭效果  app:tabGravity=”fill”和 app:tabMode=”fixed”：在标签较少的时候，这两个属性同时使用，得到居中显示效果。
+
 
         viewPager.setAdapter(tabFragmentAdapter);
         tableLayout.setupWithViewPager(viewPager);
+
 
 
         //3.設定tab填上一半的顏色
