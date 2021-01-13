@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             //TabFragmentAdapter(@NonNull FragmentManager fm):物件實體化(裡面放入Fragment經理人)
             //tabFragmentAdapteradd.Fragment(Fragment fragment , String title)://指定的Frgment新增title( fragment物件 ,標題 ):
             //ViewPager.setAdapter( PagerAdapter adapter) ://ViewPager設定調變器(這邊用的是FragmentPagerAdapter)
-        //Tablayout.setupWithViewPager(@androidx.annotation.Nullable androidx.viewpager.widget.ViewPager viewPager):在Tablayout設定要放入的ViewPager
+        //Tablayout.setupWithViePager(@androidx.annotation.Nullable androidx.viewpager.widget.ViewPager viewPager):在Tablayout設定要放入的ViewPager
         tabFragmentAdapter = new TabFragmentAdapter(getSupportFragmentManager());    //自己寫的TabFragmentAdapter
         tabFragmentAdapter.addFragment(OneFragment.newInstance(), "Tab1"); //呼叫自己寫的方法,在Frgament新增標題
         tabFragmentAdapter.addFragment(TwoFragment.newInstance(), "Tab2");
